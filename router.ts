@@ -1,16 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from "@/pages/Home.vue";
-import Login from "@/pages/Login.vue";
 
-const routes = [
-    {path: '/', component: Home},
-    {path: '/login', component: Login},
-    {path: '/about', component: () => import("@/pages/About.vue")},
-]
+const routes: any = []
+const modules = import.meta.glob('./src/pages/*.vue')
 
-const router = createRouter({
-    routes,
-    history: createWebHistory()
+Object.keys(modules).forEach((key) => {
+  const module = {
+    path: '/' + key.substring(key.lastIndexOf('/') + 1, key.lastIndexOf('.')).toLowerCase(),
+    component: modules[key]
+  }
+  routes.push(module)
 })
 
-export default router;
+const router = createRouter({
+  routes,
+  history: createWebHistory()
+})
+console.log(routes)
+
+export default router

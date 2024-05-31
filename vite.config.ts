@@ -3,22 +3,27 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
-import legacy from '@vitejs/plugin-legacy'
 import Components from 'unplugin-vue-components/vite'
+import legacy from '@vitejs/plugin-legacy'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
+import { resolve } from 'node:path'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     VueDevTools(),
+    legacy(),
     Components({
-      resolvers: [AntDesignVueResolver()]
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: false
+        })
+      ]
     })
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': resolve(__dirname, 'src')
     }
   },
   server: {

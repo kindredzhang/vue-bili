@@ -2,7 +2,7 @@
   <h1>my project</h1>
 
   <div>
-    <router-link to="/">home</router-link> ｜
+    <router-link to="/home">home</router-link> ｜
     <router-link to="/login">login</router-link> ｜
     <router-link to="/about">about</router-link> ｜
   </div>

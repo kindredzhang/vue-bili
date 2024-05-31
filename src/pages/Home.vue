@@ -1,13 +1,13 @@
 <template>
-  <div>Home</div>
   <div>
-    <Button @click="store.increment" style="color: red">{{ store.count }} * 2 = {{ store.doubleCount }}</Button
-    >
+    Home
+    <a-button type="primary" ghost>Primary</a-button>
+    <BiliButton type="primary" nativeType="button" size="lg" style="color: red"
+      >111111111111
+    </BiliButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useCounterStore } from '../store/counter'
-
-const store = useCounterStore()
+import BiliButton from '@/components/button/Button.vue'
 </script>
