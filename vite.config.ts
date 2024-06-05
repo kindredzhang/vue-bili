@@ -1,17 +1,36 @@
-import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import VueDevTools from 'vite-plugin-vue-devtools'
 import Components from 'unplugin-vue-components/vite'
-import legacy from '@vitejs/plugin-legacy'
+import VueRouter from 'unplugin-vue-router/vite'
+import legacy from "@vitejs/plugin-legacy";
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 import { resolve } from 'node:path'
 
+
 export default defineConfig({
   plugins: [
+    VueRouter({
+      // keepDefaultRouter: true,
+      // useHash: true,
+      // autoRoutes: true,
+      // syncRoutes: true,
+      // pagesDir: 'src/pages',
+      // extensions: ['vue', 'js'],
+      // importMode: 'sync',
+      // include: undefined,
+      // exclude: undefined,
+      // filter: undefined,
+      // preprocess: undefined,
+      // dedupe: true,
+      // allowOverrides: false,
+      // syncIndex: true,
+      // syncTo: 'router',
+      // replace: undefined,
+      // extendRoute: undefined,
+      // extendRoutes
+    }),
     vue(),
-    VueDevTools(),
     legacy(),
     Components({
       resolvers: [

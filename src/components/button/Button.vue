@@ -8,13 +8,14 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import 'ant-design-vue/es/button/style/index.css'
 
 type ButtonType = 'primary' | 'default' | 'danger' | 'warning' | 'link'
 type ButtonNativeType = 'button' | 'submit' | 'reset'
 type ButtonSize = 'lg' | 'sm'
 
 interface ButtonProps {
-  type?: ButtonType 
+  type?: ButtonType
   nativeType?: ButtonNativeType
   size?: ButtonSize
 }
@@ -27,7 +28,6 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 
 const classes = computed(() => {
   return [
-    'css-dev-only-do-not-override-16pw25h',
     'ant-btn',
     props.size ? `ant-btn-${props.size}` : '',
     `ant-btn-${props.type}`,
