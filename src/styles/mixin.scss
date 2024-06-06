@@ -1,0 +1,21 @@
+$namespace:'bili';
+$separator:"__";
+
+// .bili-header
+@mixin b($block){
+  $B : $namespace+'-'+$block;
+  .#{$B}{
+    @content;
+  }
+}
+
+@mixin sub($modifier){
+  $currentSelector: #{
+    & + 
+    $separator +
+    $modifier + ','
+  };
+  #{$currentSelector}{
+    @content;
+  }
+}

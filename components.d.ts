@@ -8,6 +8,9 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    ACarousel: typeof import('ant-design-vue/es')['Carousel']
+    ACol: typeof import('ant-design-vue/es')['Col']
+    ARow: typeof import('ant-design-vue/es')['Row']
     Button: typeof import('./src/components/button/Button.vue')['default']
     Container: typeof import('./src/components/layout/Container.vue')['default']
     Content: typeof import('./src/components/layout/Content.vue')['default']
@@ -20,9 +23,11 @@ declare module 'vue' {
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     Layout: typeof import('./src/components/layout/Layout.vue')['default']
+    PageHeader: typeof import('./src/components/page-header/PageHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Sider: typeof import('./src/components/layout/Sider.vue')['default']
+    Slider: typeof import('./src/components/slider/Slider.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     TodoList: typeof import('./src/components/TodoList.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
